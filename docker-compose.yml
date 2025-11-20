@@ -5,7 +5,7 @@ services:
     image: postgres:15
     container_name: pocket_db_container
     ports:
-      - '5432:5432' # Maps your computer's port 5432 to the container's port 5432
+      - '5433:5432' # Maps your computer's port 5432 to the container's port 5432
     environment:
       POSTGRES_USER: pocket_user
       POSTGRES_PASSWORD: pocket_password
