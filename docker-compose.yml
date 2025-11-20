@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: pocket_db_container
+    ports:
+      - '5432:5432' # Maps your computer's port 5432 to the container's port 5432
+    environment:
+      POSTGRES_USER: pocket_user
+      POSTGRES_PASSWORD: pocket_password
+      POSTGRES_DB: pocket_database
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Saves data so it doesn't vanish when you restart Docker
+    restart: always
+
+volumes:
+  postgres_data:
